@@ -1,0 +1,37 @@
+# Build directories
+build/
+artifacts/
+
+# Compiled UF2 or HEX files
+*.uf2
+*.hex
+*.bin
+*.elf
+
+# Python cache and venv
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+
+# West-related state (safe to exclude)
+.west/
+
+# VSCode & Codespaces
+.vscode/
+.devcontainer/.python-version
+.devcontainer/Dockerfile
+.devcontainer/devcontainer.json
+
+# Logs and temp
+*.log
+*.tmp
+*.swp
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*~
