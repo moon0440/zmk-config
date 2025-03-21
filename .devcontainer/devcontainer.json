@@ -1,0 +1,21 @@
+{
+    "name": "ZMK Config Dev",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "extensions": [
+      "ms-vscode.cpptools",
+      "ms-python.python",
+      "ms-azuretools.vscode-docker"
+    ],
+    "postCreateCommand": "west init -l . && west update",
+    "remoteUser": "vscode",
+    "features": {},
+    "mounts": [],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+    "workspaceFolder": "/workspace"
+  }
+  

@@ -1,0 +1,66 @@
+name: urchin
+
+boards:
+  - nice_nano_v2
+  - seeeduino_xiao_ble
+
+builds:
+  - name: left
+    board: nice_nano_v2
+    shield: urchin
+    keymap: config/keymap/urchin.keymap
+    kconfig: |
+      CONFIG_ZMK_SPLIT_ROLE_PERIPHERAL=y
+      CONFIG_ZMK_BLE=y
+      CONFIG_ZMK_BLE_PERIPHERAL=y
+      CONFIG_ZMK_BLE_CENTRAL=n
+      CONFIG_BT_MAX_CONN=1
+      CONFIG_BT_OBSERVER=n
+      CONFIG_BT_BROADCASTER=n
+      CONFIG_ZMK_DISPLAY=y
+      CONFIG_ZMK_WIDGET_LAYER_STATUS=y
+      CONFIG_ZMK_WIDGET_BATTERY_STATUS=y
+      CONFIG_ZMK_WIDGET_OUTPUT_STATUS=y
+
+  - name: right
+    board: nice_nano_v2
+    shield: urchin
+    keymap: config/keymap/urchin.keymap
+    kconfig: |
+      CONFIG_ZMK_SPLIT_ROLE_PERIPHERAL=y
+      CONFIG_ZMK_BLE=y
+      CONFIG_ZMK_BLE_PERIPHERAL=y
+      CONFIG_ZMK_BLE_CENTRAL=n
+      CONFIG_BT_MAX_CONN=1
+      CONFIG_BT_OBSERVER=n
+      CONFIG_BT_BROADCASTER=n
+      CONFIG_ZMK_DISPLAY=y
+      CONFIG_ZMK_WIDGET_LAYER_STATUS=y
+      CONFIG_ZMK_WIDGET_BATTERY_STATUS=y
+      CONFIG_ZMK_WIDGET_OUTPUT_STATUS=y
+
+  - name: dongle
+    board: seeeduino_xiao_ble
+    shield: urchin
+    keymap: config/keymap/urchin.keymap
+    kconfig: |
+      CONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+      CONFIG_ZMK_BLE=y
+      CONFIG_ZMK_BLE_PERIPHERAL=n
+      CONFIG_ZMK_BLE_CENTRAL=y
+      CONFIG_ZMK_USB=y
+      CONFIG_ZMK_HID_REPORT_BASIS_USB=y
+      CONFIG_USB_HID_BOOT_PROTOCOL=n
+      CONFIG_BT_MAX_CONN=2
+
+  - name: reset-left
+    board: nice_nano_v2
+    shield: settings_reset
+
+  - name: reset-right
+    board: nice_nano_v2
+    shield: settings_reset
+
+  - name: reset-dongle
+    board: seeeduino_xiao_ble
+    shield: settings_reset
